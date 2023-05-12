@@ -8,8 +8,11 @@
 ---
 batch_connect:
   template: vnc
+  min_port: 6666
+  max_port: 7666
 script:
   native:
   <%- slurm_args.each do |arg| %>
     - "<%= arg %>"
   <%- end %>
+    - "-J COMSOL"
