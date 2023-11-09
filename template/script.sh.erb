@@ -28,9 +28,9 @@ cd "${HOME}"
 #
 
 # Load the required environment
-module load comsol/6.1
+module load comsol/6.1.0.252
 
 # Launch COMSOL Multiphysics
 module list
 set -x
-comsol -3drend sw
+comsol -tmpdir /local -3drend sw
