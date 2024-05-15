@@ -3,13 +3,11 @@
   nodes = bc_num_slots.blank? ? 1 : bc_num_slots.to_i
 
   slurm_args = [ "--nodes", "#{nodes}", "--ntasks-per-node", "#{ppn}" ]
- 
+
 %>
 ---
 batch_connect:
   template: vnc
-  #min_port: 6666
-  #max_port: 7666
 script:
   native:
   <%- slurm_args.each do |arg| %>

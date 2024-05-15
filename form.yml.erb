@@ -1,8 +1,3 @@
-<%-
-  groups = OodSupport::User.new.groups.sort_by(&:id).tap { |groups|
-    groups.unshift(groups.delete(OodSupport::Process.group))
-  }.map(&:name).grep(/^P./)
--%>
 ---
 cluster:
   - "borah"
@@ -23,12 +18,6 @@ attributes:
       - ["6.1", "6.1.0.252"]
       - ["6.2", "6.2"]
   num_cores: 4
-  #  widget: "number_field"
-  #  label: "Number of cores"
-  #  value: 1
-  #  min: 1
-  #  max: 48
-  #  step: 1
   bc_num_hours:
     value: 1
     min: 1
